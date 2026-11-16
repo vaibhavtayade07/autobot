@@ -1,0 +1,16 @@
+numpy
+pandas
+scipy
+pydantic>=2
+pydantic-settings>=2
+pyyaml
+ccxt
+vectorbt
+arch
+statsmodels
+pandas-ta
+smartapi
+pyotp
+python-dotenv
+# dev
+pytest

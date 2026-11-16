@@ -1,0 +1,33 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Secrets / creds — NEVER commit
+.env
+*.key
+config/secrets.json
+credentials.json
+
+# Data / logs
+data/
+logs/
+*.log
+*.csv.bak
+backtests/__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

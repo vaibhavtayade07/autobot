@@ -1,0 +1,43 @@
+# autobot.yaml — non-secret configuration (secrets come from env only, prefix AUTOBO_).
+environment: paper
+equity_base: 100000.0
+
+risk:
+  risk_per_trade_pct: 0.01        # 1% equity per trade
+  kelly_fraction_cap: 0.25        # cap per-position Kelly at 25%
+  max_positions: 6
+  max_drawdown_pct: 0.20          # KILL SWITCH threshold
+  atr_stop_mult: 2.0
+  order_rate_limit: 20            # Angel cap; token bucket
+  flatten_on_kill: true
+
+symbols:
+  - ticker: BTC/USDT
+    asset_class: crypto
+    exchange: binance
+    timeframes: [1m, 5m]
+    strategies: [vol_breakout, vol_climax, low_vol_pullback, obv_divergence]
+    enabled: true
+  - ticker: RELIANCE
+    asset_class: india
+    exchange: NSE
+    timeframes: [1m, 5m]
+    strategies: [vol_breakout, pairs_kalman]
+    enabled: true
+
+session:
+  india:
+    open: "09:15"
+    close: "15:30"
+    timezone: "Asia/Kolkata"
+    holidays_file: india_holidays.json
+  crypto:
+    always_open: true
+
+backtest:
+  start: "2025-01-01"
+  end: "2025-06-30"
+  initial_capital: 100000.0
+  freq: 1m
+  in_sample: 3M
+  out_sample: 1M

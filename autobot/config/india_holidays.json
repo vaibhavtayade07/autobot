@@ -1,0 +1,16 @@
+{
+  "_comment": "NSE trading holidays (YYYY-MM-DD). Replace with the official list for the run year. Kept short + valid so settings validation passes; the session gate masks these dates for India symbols.",
+  "holidays": [
+    "2025-01-01",
+    "2025-02-26",
+    "2025-03-14",
+    "2025-04-10",
+    "2025-04-14",
+    "2025-05-01",
+    "2025-08-15",
+    "2025-10-02",
+    "2025-10-21",
+    "2025-11-05",
+    "2025-12-25"
+  ]
+}

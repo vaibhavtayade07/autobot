@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autobot"
+version = "0.1.0"
+description = "Live, math-precise HFT-style trading bot for crypto (CCXT/Binance) + Indian equities (Angel One SmartAPI behind OpenAlgo)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "pydantic>=2",
+    "pydantic-settings>=2",
+    "pyyaml",
+    "ccxt",
+    "vectorbt",
+    "arch",
+    "statsmodels",
+    "pandas-ta",
+    "smartapi",
+    "pyotp",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+autobot = "autobot.main:run"
+
+[tool.setuptools.packages.find]
+include = ["autobot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
